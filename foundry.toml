@@ -1,0 +1,40 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+script = 'scripts'
+
+################
+# Solc options #
+################
+solc = '0.8.30'
+evm_version = 'cancun'
+optimizer = true
+optimizer_runs = 500000
+
+#####################
+# optimizer details #
+#####################
+[profile.default.optimizer_details]
+yul = true
+# The peephole optimizer is always on if no details are given,
+# use details to switch it off.
+peephole = true
+# The inliner is always off if no details are given,
+# use details to switch it on.
+inliner = true
+# The unused jumpdest remover is always on if no details are given,
+# use details to switch it off.
+jumpdest_remover = true
+# Sometimes re-orders literals in commutative operations.
+order_literals = true
+# Removes duplicate code blocks
+deduplicate = true
+# Common subexpression elimination, this is the most complicated step but
+# can also provide the largest gain.
+cse = true
+# Optimize representation of literal numbers and strings in code.
+constant_optimizer = true
+# Use unchecked arithmetic when incrementing the counter of for loops
+# under certain circumstances. It is always on if no details are given.
+simple_counter_for_loop_unchecked_increment = true
